@@ -2,29 +2,20 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: 'dashboard',
+    path: '',
     loadComponent: () =>
       import('./dashboard/dashboard.component').then(
         (m) => m.DashboardComponent
       ),
     children: [
       {
-        path: 'first component',
-        title: 'First Component',
+        path: 'Base',
+        title: 'Base Component',
         loadComponent: () =>
-          import('./01/01.component').then((m) => m.FirstComponent),
-      },
-
-      {
-        path: '',
-        redirectTo: 'control-flow',
-        pathMatch: 'full',
+          import('./components/base/base.component').then(
+            (m) => m.BaseComponent
+          ),
       },
     ],
-  },
-  {
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
   },
 ];
