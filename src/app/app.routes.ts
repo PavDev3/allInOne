@@ -16,6 +16,14 @@ export const routes: Routes = [
             (m) => m.BaseComponent
           ),
       },
+      {
+        path: 'Hero',
+        title: 'Hero Component',
+        loadComponent: () =>
+          import('./components/hero/hero.component').then(
+            (m) => m.HeroComponent
+          ),
+      },
     ],
   },
 ];
